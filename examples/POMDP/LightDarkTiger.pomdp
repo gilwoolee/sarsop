@@ -1,0 +1,512 @@
+# This is the light-dark-tiger problem of Bayes-CPACE AAAI paper
+
+discount: 0.95
+values: reward
+states: 
+s_2001 s_200_1 s_100_1 s_1001 s1001 s0001 s0101 s0_101
+s_1101 s_1_101 s_2101 s_2_101 s_3001
+s_3101 s_3_101 s100_1 s000_1 s010_1 s0_10_1 
+s_110_1 s_1_10_1 s_210_1 s_2_10_1 s_300_1 
+s_310_1 s_3_10_1 
+
+s_101_1 s_1011 s1011 s0011 s0111 s0_111
+s_1111 s_1_111 s_2011 s_2111 s_2_111 s_3011
+s_3111 s_3_111 s101_1 s001_1 s011_1 s0_11_1
+s_111_1 s_1_11_1 s_201_1 s_211_1 s_2_11_1
+s_301_1 s_311_1 s_3_11_1
+
+actions: North South East West
+observations: TigerTop TigerBottom 
+start: 
+0.5 0.5 0 0 0 0
+0     0 0 0 0 0
+0     0 0 0 0 0 
+0     0 0 0 0 0
+0     0
+0     0 0 0 0 0
+0     0 0 0 0 0
+0     0 0 0 0 0
+0     0 0 0 0 0
+0     0
+
+
+
+T: North : s_100_1 : s_110_1 1.000000
+T: North : s_1001  : s_1101  1.000000
+
+T: North : s000_1 : s010_1 1.000000
+T: North : s0001  : s0101  1.000000
+
+T: North : s100_1  : s_200_1  0.5
+T: North : s100_1  : s_2001  0.5
+T: North : s1001  : s_200_1  0.5
+T: North : s1001  : s_2001  0.5
+
+T: North : s_200_1 : s_210_1 1.000000
+T: North : s_2001  : s_2101  1.000000
+
+T: North : s_300_1 : s_310_1 1.000000
+T: North : s_3001  : s_3101  1.000000
+
+
+T: North : s_110_1 : s_110_1 1.000000
+T: North : s_1101  : s_1101  1.000000
+
+T: North : s010_1 : s010_1 1.000000
+T: North : s0101  : s0101  1.000000
+
+T: North : s_210_1 : s_210_1 1.000000
+T: North : s_2101  : s_2101  1.000000
+
+T: North : s_310_1 : s_310_1 1.000000
+T: North : s_3101  : s_3101  1.000000
+
+
+T: North : s_1_10_1 : s_100_1 1.000000
+T: North : s_1_101  : s_1001  1.000000
+
+T: North : s0_10_1 : s000_1 1.000000
+T: North : s0_101  : s0001  1.000000
+
+T: North : s_2_10_1 : s_200_1 1.000000
+T: North : s_2_101  : s_2001  1.000000
+
+T: North : s_3_10_1 : s_300_1 1.000000
+T: North : s_3_101  : s_3001  1.000000
+
+
+
+T: North : s_101_1 : s_111_1 1.000000
+T: North : s_1011  : s_1111  1.000000
+
+T: North :  s001_1 :  s011_1 1.000000
+T: North :  s0011  :  s0111  1.000000
+
+T: North :  s101_1 :  s_200_1  0.5
+T: North :  s101_1 :  s_2001  0.5
+T: North :  s1011 :  s_200_1  0.5
+T: North :  s1011 :  s_2001  0.5
+
+T: North : s_201_1 : s_211_1 1.000000
+T: North : s_2011  : s_2111  1.000000
+
+T: North : s_301_1 : s_311_1 1.000000
+T: North : s_3011  : s_3111  1.000000
+
+
+T: North : s_111_1 : s_111_1 1.000000
+T: North : s_1111  : s_1111  1.000000
+
+T: North :  s011_1 :  s011_1 1.000000
+T: North :  s0111  :  s0111  1.000000
+
+T: North : s_211_1 : s_211_1 1.000000
+T: North : s_2111  : s_2111  1.000000
+
+T: North : s_311_1 : s_311_1 1.000000
+T: North : s_3111  : s_3111  1.000000
+
+
+T: North : s_1_11_1 : s_101_1 1.000000
+T: North : s_1_111  : s_1011  1.000000
+
+T: North :  s0_11_1 :  s001_1 1.000000
+T: North :  s0_111  :  s0011  1.000000
+
+T: North : s_2_11_1 : s_201_1 1.000000
+T: North : s_2_111  : s_2011  1.000000
+
+T: North : s_3_11_1 : s_301_1 1.000000
+T: North : s_3_111  : s_3011  1.000000
+
+
+
+T: South : s_100_1 :  s_1_10_1 1.000000
+T: South : s_1001  :  s_1_101  1.000000
+
+T: South :  s000_1  :  s0_10_1  1.000000
+T: South :  s0001   :  s0_101   1.000000
+
+T: South : s100_1    : s_200_1  0.5
+T: South : s100_1    : s_2001  0.5
+T: South : s1001    : s_200_1  0.5
+T: South : s1001    : s_2001  0.5
+
+T: South : s_200_1 :  s_2_10_1 1.000000
+T: South : s_2001  :  s_2_101  1.000000
+
+T: South : s_300_1 :  s_3_10_1 1.000000
+T: South : s_3001  :  s_3_101  1.000000
+
+
+T: South : s_110_1 : s_101_1 1.000000
+T: South : s_1101  : s_1011  1.000000
+
+T: South :  s010_1 :  s001_1 1.000000
+T: South :  s0101  :  s0011  1.000000
+
+T: South : s_210_1 : s_201_1 1.000000
+T: South : s_2101  : s_2011  1.000000
+
+T: South : s_310_1 : s_301_1 1.000000
+T: South : s_3101  : s_3011  1.000000
+
+
+T: South : s_1_10_1 : s_1_10_1 1.000000
+T: South : s_1_101  : s_1_101  1.000000
+
+T: South :  s0_10_1 :  s0_10_1 1.000000
+T: South :  s0_101  :  s0_101  1.000000
+
+T: South : s_2_10_1 : s_2_10_1 1.000000
+T: South : s_2_101  : s_2_101  1.000000
+
+T: South : s_3_10_1 : s_3_10_1 1.000000
+T: South : s_3_101  : s_3_101  1.000000
+
+
+
+T: South : s_101_1 :  s_1_11_1 1.000000
+T: South : s_1011  :  s_1_111  1.000000
+
+T: South :  s001_1  :  s0_11_1  1.000000
+T: South :  s0011   :  s0_111   1.000000
+
+T: South : s101_1  : s_200_1  0.5
+T: South : s101_1  : s_2001  0.5
+T: South : s1011  : s_200_1  0.5
+T: South : s1011  : s_2001  0.5
+
+T: South : s_201_1 :  s_2_11_1 1.000000
+T: South : s_2011  :  s_2_111  1.000000
+
+T: South : s_301_1 :  s_3_11_1 1.000000
+T: South : s_3011  :  s_3_111  1.000000
+
+
+T: South : s_111_1 : s_101_1 1.000000
+T: South : s_1111  : s_1011  1.000000
+
+T: South :  s011_1 :  s001_1 1.000000
+T: South :  s0111  :  s0011  1.000000
+
+T: South : s_211_1 : s_201_1 1.000000
+T: South : s_2111  : s_2011  1.000000
+
+T: South : s_311_1 : s_301_1 1.000000
+T: South : s_3111  : s_3011  1.000000
+
+
+T: South : s_1_11_1 : s_1_11_1 1.000000
+T: South : s_1_111  : s_1_111  1.000000
+
+T: South :  s0_11_1 :  s0_11_1 1.000000
+T: South :  s0_111  :  s0_111  1.000000
+
+T: South : s_2_11_1 : s_2_11_1 1.000000
+T: South : s_2_111  : s_2_111  1.000000
+
+T: South : s_3_11_1 : s_3_11_1 1.000000
+T: South : s_3_111  : s_3_111  1.000000
+
+
+
+T: East : s_100_1 :   s000_1 1.000000
+T: East : s_1001  :   s0001  1.000000
+
+T: East :  s000_1  :  s100_1  1.000000
+T: East :  s0001   :  s1001   1.000000
+
+T: East :  s100_1  :  s100_1  1.000000
+T: East :  s1001   :  s1001   1.000000
+
+T: East : s_200_1 :  s_100_1 1.000000
+T: East : s_2001  :  s_1001  1.000000
+
+T: East : s_300_1 :  s_200_1 1.000000
+T: East : s_3001  :  s_2001  1.000000
+
+
+T: East : s_110_1 : s010_1 1.000000
+T: East : s_1101  : s0101  1.000000
+
+T: East :  s010_1 : s_200_1 0.5
+T: East :  s010_1 : s_2001 0.5
+T: East :  s0101 : s_200_1 0.5
+T: East :  s0101 : s_2001 0.5
+
+T: East : s_210_1 :s_110_1 1.000000
+T: East : s_2101  :s_1101  1.000000
+
+T: East : s_310_1 :s_210_1 1.000000
+T: East : s_3101  :s_2101  1.000000
+
+
+T: East : s_1_10_1 : s0_10_1 1.000000
+T: East : s_1_101  : s0_101  1.000000
+
+
+T: East :  s0_10_1 : s_200_1 0.5
+T: East :  s0_10_1 : s_2001 0.5
+T: East :  s0_101 : s_200_1 0.5
+T: East :  s0_101 : s_2001 0.5
+
+T: East : s_2_10_1 :s_1_10_1 1.000000
+T: East : s_2_101  :s_1_101  1.000000
+
+T: East : s_3_10_1 :s_2_10_1 1.000000
+T: East : s_3_101  :s_2_101  1.000000
+
+
+T: East : s_101_1 :   s001_1 1.000000
+T: East : s_1011  :   s0011  1.000000
+
+T: East :  s001_1  :  s101_1  1.000000
+T: East :  s0011   :  s1011   1.000000
+
+T: East :  s101_1  :  s101_1  1.000000
+T: East :  s1011   :  s1011   1.000000
+
+T: East : s_201_1 :  s_101_1 1.000000
+T: East : s_2011  :  s_1011  1.000000
+
+T: East : s_301_1 :  s_201_1 1.000000
+T: East : s_3011  :  s_2011  1.000000
+
+
+T: East : s_111_1 : s011_1 1.000000
+T: East : s_1111  : s0111  1.000000
+
+T: East :  s011_1 : s_200_1 0.5
+T: East :  s011_1 : s_2001 0.5
+T: East :  s0111 : s_200_1 0.5
+T: East :  s0111 : s_2001 0.5
+
+T: East : s_211_1 :s_111_1 1.000000
+T: East : s_2111  :s_1111  1.000000
+
+T: East : s_311_1 :s_211_1 1.000000
+T: East : s_3111  :s_2111  1.000000
+
+
+T: East : s_1_11_1 : s0_11_1 1.000000
+T: East : s_1_111  : s0_111  1.000000
+
+T: East :  s0_11_1 : s_200_1 0.5
+T: East :  s0_11_1 : s_2001 0.5
+T: East :  s0_111  : s_200_1 0.5
+T: East :  s0_111  : s_2001 0.5
+
+T: East : s_2_11_1 :s_1_11_1 1.000000
+T: East : s_2_111  :s_1_111  1.000000
+
+T: East : s_3_11_1 :s_2_11_1 1.000000
+T: East : s_3_111  :s_2_111  1.000000
+
+
+
+T: West : s_100_1 :  s_200_1 1.000000
+T: West : s_1001  :  s_2001  1.000000
+
+T: West :  s000_1  : s_100_1  1.000000
+T: West :  s0001   : s_1001   1.000000
+
+T: West :  s100_1  :  s000_1  1.000000
+T: West :  s1001   :  s0001   1.000000
+
+T: West : s_200_1 :  s_301_1 1.000000
+T: West : s_2001  :  s_3011  1.000000
+
+T: West : s_300_1 :  s_301_1 1.000000
+T: West : s_3001  :  s_3011  1.000000
+
+
+T: West : s_110_1 : s_210_1 1.000000
+T: West : s_1101  : s_2101  1.000000
+
+T: West :  s010_1 : s_110_1 1.000000
+T: West :  s0101  : s_1101  1.000000
+
+T: West : s_210_1 : s_311_1 1.000000
+T: West : s_2101  : s_3111  1.000000
+
+T: West : s_310_1 : s_311_1 1.000000
+T: West : s_3101  : s_3111  1.000000
+
+
+T: West : s_1_10_1 : s_2_10_1 1.000000
+T: West : s_1_101  : s_2_101  1.000000
+
+T: West :  s0_10_1 : s_1_10_1 1.000000
+T: West :  s0_101  : s_1_101  1.000000
+
+T: West : s_2_10_1 : s_3_11_1 1.000000
+T: West : s_2_101  : s_3_111  1.000000
+
+T: West : s_3_10_1 : s_3_11_1 1.000000
+T: West : s_3_101  : s_3_111  1.000000
+
+
+
+T: West : s_101_1 :  s_201_1 1.000000
+T: West : s_1011  :  s_2011  1.000000
+
+T: West :  s001_1  : s_101_1  1.000000
+T: West :  s0011   : s_1011   1.000000
+
+T: West :  s101_1  :  s001_1  1.000000
+T: West :  s1011   :  s0011   1.000000
+
+T: West : s_201_1 :  s_301_1 1.000000
+T: West : s_2011  :  s_3011  1.000000
+
+T: West : s_301_1 :  s_301_1 1.000000
+T: West : s_3011  :  s_3011  1.000000
+
+
+T: West : s_111_1 : s_211_1 1.000000
+T: West : s_1111  : s_2111  1.000000
+
+T: West :  s011_1 : s_111_1 1.000000
+T: West :  s0111  : s_1111  1.000000
+
+T: West : s_211_1 : s_311_1 1.000000
+T: West : s_2111  : s_3111  1.000000
+
+T: West : s_311_1 : s_311_1 1.000000
+T: West : s_3111  : s_3111  1.000000
+
+
+T: West : s_1_11_1 : s_2_11_1 1.000000
+T: West : s_1_111  : s_2_111  1.000000
+
+T: West :  s0_11_1 : s_1_11_1 1.000000
+T: West :  s0_111  : s_1_111  1.000000
+
+T: West : s_2_11_1 : s_3_11_1 1.000000
+T: West : s_2_111  : s_3_111  1.000000
+
+T: West : s_3_11_1 : s_3_11_1 1.000000
+T: West : s_3_111  : s_3_111  1.000000
+
+
+O: * : s_1011  : TigerTop 1.0
+O: * : s1011   : TigerTop 1.0
+O: * : s0011   : TigerTop 1.0
+
+O: * : s0111   : TigerTop 1.0
+O: East : s0111   : TigerTop 0.5
+O: East : s0111   : TigerBottom 0.5
+O: * : s0_111  : TigerTop 1.0
+O: East : s0_111   : TigerTop 0.5
+O: East : s0_111   : TigerBottom 0.5
+
+O: * : s_1111  : TigerTop 1.0
+O: * : s_1_111 : TigerTop 1.0
+O: * : s_2011  : TigerTop 1.0
+O: * : s_2111  : TigerTop 1.0
+O: * : s_2_111 : TigerTop 1.0
+O: * : s_3011  : TigerTop 1.0
+O: * : s_3111  : TigerTop 1.0
+O: * : s_3_111 : TigerTop 1.0
+
+O: * : s_1001   : TigerTop 0.5
+O: * : s_1001   : TigerBottom 0.5
+O: * :  s1001   : TigerTop 0.5
+O: * :  s1001   : TigerBottom 0.5
+O: * :  s0001   : TigerTop 0.5
+O: * :  s0001   : TigerBottom 0.5
+O: * :  s0101   : TigerTop 0.5
+O: * :  s0101   : TigerBottom 0.5
+O: * : s0_101   : TigerTop 0.5
+O: * : s0_101   : TigerBottom 0.5
+O: * : s_1101   : TigerTop 0.5
+O: * : s_1101   : TigerBottom 0.5
+O: * :s_1_101   : TigerTop 0.5
+O: * :s_1_101   : TigerBottom 0.5
+O: * : s_2001   : TigerTop 0.5
+O: * : s_2001   : TigerBottom 0.5
+O: * : s_2101   : TigerTop 0.5
+O: * : s_2101   : TigerBottom 0.5
+O: * :s_2_101   : TigerTop 0.5
+O: * :s_2_101   : TigerBottom 0.5
+O: * : s_3001   : TigerTop 0.5
+O: * : s_3001   : TigerBottom 0.5
+O: * : s_3101   : TigerTop 0.5
+O: * : s_3101   : TigerBottom 0.5
+O: * :s_3_101   : TigerTop 0.5
+O: * :s_3_101   : TigerBottom 0.5
+
+O: * : s_100_1  : TigerTop 0.5
+O: * : s_100_1  : TigerBottom 0.5
+O: * :  s100_1  : TigerTop 0.5
+O: * :  s100_1  : TigerBottom 0.5
+O: * :  s000_1  : TigerTop 0.5
+O: * :  s000_1  : TigerBottom 0.5
+O: * :  s010_1  : TigerTop 0.5
+O: * :  s010_1  : TigerBottom 0.5
+O: * : s0_10_1  : TigerTop 0.5
+O: * : s0_10_1  : TigerBottom 0.5
+O: * : s_110_1  : TigerTop 0.5
+O: * : s_110_1  : TigerBottom 0.5
+O: * :s_1_10_1  : TigerTop 0.5
+O: * :s_1_10_1  : TigerBottom 0.5
+O: * : s_200_1  : TigerTop 0.5
+O: * : s_200_1  : TigerBottom 0.5
+O: * : s_210_1  : TigerTop 0.5
+O: * : s_210_1  : TigerBottom 0.5
+O: * :s_2_10_1  : TigerTop 0.5
+O: * :s_2_10_1  : TigerBottom 0.5
+O: * : s_300_1  : TigerTop 0.5
+O: * : s_300_1  : TigerBottom 0.5
+O: * : s_310_1  : TigerTop 0.5
+O: * : s_310_1  : TigerBottom 0.5
+O: * :s_3_10_1  : TigerTop 0.5
+O: * :s_3_10_1  : TigerBottom 0.5
+
+O: * : s_101_1  : TigerBottom 1.0
+O: * :  s101_1  : TigerBottom 1.0
+O: North :  s101_1  : TigerBottom 0.5
+O: North :  s101_1  : TigerTop 0.5
+O: South :  s101_1  : TigerBottom 0.5
+O: South :  s101_1  : TigerTop 0.5
+
+O: * :  s001_1  : TigerBottom 1.0
+O: * :  s011_1  : TigerBottom 1.0
+O: * : s0_11_1  : TigerBottom 1.0
+O: East :  s011_1  : TigerTop 0.5
+O: East :  s011_1  : TigerBottom 0.5
+O: East : s0_11_1  : TigerTop 0.5
+O: East : s0_11_1  : TigerBottom 0.5
+
+O: * : s_111_1  : TigerBottom 1.0
+O: * :s_1_11_1  : TigerBottom 1.0
+O: * : s_201_1  : TigerBottom 1.0
+O: * : s_211_1  : TigerBottom 1.0
+O: * :s_2_11_1  : TigerBottom 1.0
+O: * : s_301_1  : TigerBottom 1.0
+O: * : s_311_1  : TigerBottom 1.0
+O: * :s_3_11_1  : TigerBottom 1.0
+
+R:East:  * : * : * 0
+R:West:  * : * : * 0
+R:North: * : * : * 0
+R:South: * : * : * 0
+
+R:North: s1001: * : * -100
+R:North: s100_1 : * : * 10
+R:South: s1001 : * : * 10
+R:South: s100_1 : * : * -100
+R:North: s1011: * : * -100
+R:North: s101_1 : * : * 10
+R:South: s1011 : * : * 10
+R:South: s101_1 : * : * -100
+
+R:East: s0101 : * : * -100
+R:East: s010_1 : * : * 10
+R:East: s0_101 : * : * 10
+R:East: s0_10_1 : * : * -100
+R:East:  s0111 : * : * -100
+R:East:  s011_1 : * : * 10
+R:East: s0_111 : * : * 10
+R:East: s0_11_1 : * : * -100
